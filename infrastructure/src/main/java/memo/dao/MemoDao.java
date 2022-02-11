@@ -4,6 +4,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * DAO = Data Access Object
+ */
 public class MemoDao {
 
     /**
@@ -17,7 +20,8 @@ public class MemoDao {
      */
     public Memo findByUserIdAndFavoriteFLg(long userId, boolean favoriteFlg) throws SQLException {
         String searchSQL = "SELECT * FROM memo" +
-                " WHERE user_id = ? AND favorite_flg = ?";
+                " WHERE user_id = ? AND favorite_flg = ?" +
+                " LEFT JOIN user " ;
         PreparedStatement ps = hogehoge(searchSQL);
         ResultSet rs = ps.executeQuery();
         return new Memo(

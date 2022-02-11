@@ -17,11 +17,10 @@ public class MemoController {
      *
      * 必要だけどDDDの主眼というわけでもないかな
      */
-    @GetMapping("/yout/memo/{userId}/list")
+    @GetMapping("/yout/memo/{userId}/list_favorites")
     public MemoResponse list(@PathValiable long userId) {
         MemoResponse response = memoApplicationService.loadFavorites(userId);
         return response;
     }
 
-//    @GetMapping("/wallet/history/{userId}/mohthly")
 }

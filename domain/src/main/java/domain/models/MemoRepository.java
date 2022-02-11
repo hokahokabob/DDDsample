@@ -16,3 +16,4 @@ public interface MemoRepository {
      */
     Memo loadTugitukus(long userId);
 }
+

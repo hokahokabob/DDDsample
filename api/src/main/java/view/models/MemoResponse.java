@@ -14,10 +14,12 @@ public class MemoResponse {
     private String title;
 
     private String content;
-Kechakechakechadon2000
-    //domainオブジェクトを、ユーザに表示する用の形式に整形する
+
+    /**
+     * domainオブジェクトを、ユーザに表示する用の形式に整形する
+     */
     public static MemoResponse of(Memo memo) {
-        return new MemoResponse.builder()
+        return MemoResponse.builder()
                 .memoId(memo.getMemoId())
                 .isTugituku(memo.getTugituku())
                 .title(Objects.nonNull(memo.getTitle()) ? memo.getTitle() : "No Title")

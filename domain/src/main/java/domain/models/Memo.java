@@ -11,4 +11,14 @@ public class Memo {
     private String title;
 
     private String content;
+
+//    private Date insert_at;//この辺は今ドメインモデルとして関心がないので不要
+
+    /**
+     * domainのルールをこんな感じで記述する
+     * @return
+     */
+    boolean isTugituku() {
+        return this.isTugituku;
+    }
 }
