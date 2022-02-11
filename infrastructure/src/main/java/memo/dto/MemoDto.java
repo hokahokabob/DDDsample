@@ -1,5 +1,9 @@
 package memo.dto;
 
+import domain.models.Memo;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
 import java.util.Date;
 
 /**
@@ -26,6 +30,9 @@ public class MemoDto {
      * (これが唯一の正解ではないと思うが、)
      * とりあえずDTOで全部とってきておいて、
      * ドメインとして必要とする要素だけドメインオブジェクトに再構成して返す
+     * ※DBレコード→DTO→ドメインオブジェクトとするか
+     *  DBレコード→ドメインオブジェクトとするかは実装者の宗教や状況にもよると思われる
+     *
      * @return
      */
     private Memo toDomainModel() {

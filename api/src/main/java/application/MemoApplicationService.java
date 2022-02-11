@@ -1,5 +1,9 @@
 package application;
 
+import domain.models.Memo;
+import domain.service.MemoDomainService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import view.models.MemoResponse;
 
 @Service
@@ -17,8 +21,8 @@ public class MemoApplicationService {
      * @return
      */
     public MemoResponse loadFavorites(long userId) {
-        Memo memo = memoDomainService.findFavorite(userId);
-        return MemoResponse.of(Memo);
+        Memo memo = memoDomainService.findFavorites(userId);
+        return MemoResponse.of(memo);
     }
 
 }

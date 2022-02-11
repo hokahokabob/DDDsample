@@ -1,8 +1,13 @@
 package view.models;
 
+import domain.models.Memo;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+
 import java.util.Objects;
 
-@NoArgsConstuctor
+@NoArgsConstructor
 @AllArgsConstructor// コンストラクタを付与してる
 @Builder
 public class MemoResponse {
@@ -21,7 +26,7 @@ public class MemoResponse {
     public static MemoResponse of(Memo memo) {
         return MemoResponse.builder()
                 .memoId(memo.getMemoId())
-                .isTugituku(memo.getTugituku())
+                .isTugituku(memo.isTugituku())
                 .title(Objects.nonNull(memo.getTitle()) ? memo.getTitle() : "No Title")
                 .content(memo.getContent())
                 .build();

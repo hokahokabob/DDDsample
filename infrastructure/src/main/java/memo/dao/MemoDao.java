@@ -1,5 +1,9 @@
 package memo.dao;
 
+import domain.models.Memo;
+
+import javax.sql.DataSource;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,12 +26,14 @@ public class MemoDao {
         String searchSQL = "SELECT * FROM memo" +
                 " WHERE user_id = ? AND favorite_flg = ?" +
                 " LEFT JOIN user " ;
-        PreparedStatement ps = hogehoge(searchSQL);
+        Connection conn = null;
+        PreparedStatement ps = conn.prepareStatement(searchSQL);
         ResultSet rs = ps.executeQuery();
         return new Memo(
                 rs.getInt(1),
-                rs.getString(2),
-                ...
+                rs.getBoolean(2),
+                rs.getString(3),
+                rs.getString(4)
         );
 
     }

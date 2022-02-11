@@ -1,6 +1,10 @@
 package domain.models;
 //リポジトリもドメインモデルの一つである
 
+import org.springframework.stereotype.Repository;
+
+import java.sql.SQLException;
+
 @Repository
 public interface MemoRepository {
 
@@ -14,6 +18,6 @@ public interface MemoRepository {
      *
      * キーワード：依存関係逆転の法則　抽象に依存すべき　←大事
      */
-    Memo loadTugitukus(long userId);
+    Memo loadTugitukus(long userId) ;
 }
 

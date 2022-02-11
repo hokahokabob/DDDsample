@@ -1,7 +1,12 @@
 package domain.models;
 
-@NoArgsConstuctor
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
 @AllArgsConstructor// コンストラクタを付与してる
+@Getter
 public class Memo {
 
     private long memoId;
@@ -12,13 +17,13 @@ public class Memo {
 
     private String content;
 
-//    private Date insert_at;//この辺は今ドメインモデルとして関心がないので不要
+//    private Date created_at;//この辺は今ドメインモデルとして関心がないので不要
 
     /**
      * domainのルールをこんな感じで記述する
      * @return
      */
-    boolean isTugituku() {
+    public boolean isTugituku() {
         return this.isTugituku;
     }
 }

@@ -1,6 +1,11 @@
 package memo;
 
+import domain.models.Memo;
+import domain.models.MemoRepository;
 import memo.dao.MemoDao;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.sql.SQLException;
 
 /**
  * 技術的な詳細中の詳細
@@ -20,10 +25,15 @@ public class MemoRepositoryImpl implements MemoRepository {
 
     @Override
     public Memo loadTugitukus(long userId) {
-        memoDao.findByUserIdAndFavoriteFLg(
-                userId,
-                true
-        );
+        try {
+            memoDao.findByUserIdAndFavoriteFLg(
+                    userId,
+                    true
+            );
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return null;
     }
-
 }
