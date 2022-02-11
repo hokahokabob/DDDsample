@@ -35,7 +35,7 @@ public class MemoDto {
      *
      * @return
      */
-    private Memo toDomainModel() {
+    public Memo toDomainModel() {
         return new Memo(memoId, isTugituku, title, content);
     }
 }
