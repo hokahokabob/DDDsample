@@ -14,6 +14,7 @@
 - 各クラスのパッケージ構造（Application Service / Domain Serviceの違いなどを含めて)
 - リポジトリは何を返しているか
 - View Modelとドメインモデルの違い
+
 ？と思ったらPaymenthistoryServiceImpl.javaまでお問い合わせ
 
 
