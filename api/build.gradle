@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
     implementation project(':domain')
+    implementation project(':infrastructure')
     implementation 'org.springframework.boot:spring-boot-starter-web:2.6.3'
     compileOnly 'org.projectlombok:lombok:1.18.12'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
